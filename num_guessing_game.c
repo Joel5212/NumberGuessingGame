@@ -8,20 +8,22 @@
 // and the user will have to guess the number until the user guesses it correctly and this is done using a while loop which will loop until won == 1.
 //If the user does not guess correctly then the program will explain if the
 // guessed number was too high or too low. This was done using these else if statements:
-// else if (guessNumber < randomNumber) and else if (guessNumber > randomNumber). /If the user selects 2 the user can change the range of the generated number up to INT_MAX.
+// else if (guessNumber < randomNumber) and else if (guessNumber > randomNumber).
+//If the user selects 2 the user can change the range of the generated number up to INT_MAX.
 
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
 #include <limits.h>
+
 int main()
 {
     time_t t;
     short option;
-    int guessNumber;
+    char guessNumber;
     int maxNumber = 10;
     int randomNumber;
-    char won = 0;
+    short won = 0;
 
     while (option != 3)
     {
@@ -36,6 +38,7 @@ int main()
             {
                 printf("Guess the number:\n");
                 scanf("%u", &guessNumber);
+
                 if (guessNumber == randomNumber)
                 {
                     printf("YOU WON!!!\n");
